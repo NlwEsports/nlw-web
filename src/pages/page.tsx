@@ -4,9 +4,12 @@ import useBreakpointValue from "../hooks/useBreakpointValue";
 import { PageType } from "../types/page.type";
 
 const Page = ({ client, mobile }: PageType) => {
+	const headerClient = <HeaderClient />;
+	const headerMobile = <HeaderMobile />;
+
 	const [header, screen] = useBreakpointValue()
-		? [<HeaderClient />, client]
-		: [<HeaderMobile />, mobile];
+		? [headerClient, client]
+		: [headerMobile, mobile];
 
 	return (
 		<>
